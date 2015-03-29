@@ -32,6 +32,7 @@ namespace CMSByMVCTest.Areas.Admin.Controllers
         //admin/post/create/
         [Route("create")]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Post model) {
             if (!ModelState.IsValid) {
                 return View(model);
@@ -56,6 +57,7 @@ namespace CMSByMVCTest.Areas.Admin.Controllers
         //admin/post/edit/post-to-edit
         [Route("edit/{id}")]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(Post model) {
 
             if (!ModelState.IsValid)
